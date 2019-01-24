@@ -6,6 +6,7 @@ This folder contains two python scripts, namely 'parse_fcs.py' and 'thresh_fcs.p
 '.fcs' files were orginally obtained in the ZenBlack software using the FCS tab of a Zeiss880 Airy Scan confocal setup.
 
 An example of an '.fcs' file format:
+
 ![alt text](Images/fcs_file_example.png)  
  
 
@@ -61,7 +62,7 @@ python parse_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 1
 ```
 'python parse_fcs.py' calls the program. "/Users/your_user_name_of_computer/Desktop/Demo" specifies where the '.fcs' files are located. '1' specifies the number of recordings per '.fcs' file. The program will generate a 'data.csv' file in the same directory as the '.fcs' files, in our case within the 'Demo' folder.  
   
-To identify the wanted threshold for background subtraction (that results in less than 5 peaks per control recording), multiple thresholds that vary in “Mean + n*SD” can be subtracted at the same time by running the following command in the same terminal:  
+To identify the wanted threshold for background subtraction (that results in less than 5 peaks per control recording), multiple thresholds that vary in “Mean + n*SD” can be subtracted simultaneously by running the following command in the same terminal:  
 ```
 python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4 5 6 7 8 9 10"
 ```
