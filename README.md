@@ -6,16 +6,15 @@ This folder contains two python scripts, namely 'parse_fcs.py' and 'thresh_fcs.p
 '.fcs' files were orginally obtained in the ZenBlack software using the FCS tab of a Zeiss880 Airy Scan confocal setup.
 
 An example of an '.fcs' file format:
-
 ![alt text](Images/fcs_file_example.png)  
-(Courtesy of Thomas Steinacker)  
+ 
 
 Plotting it into a spectrum will look like this:  
 ![alt text](Images/original_peak.png)  
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. It was developed in macOS Sierra Version 10.12.6 but similar logic may well apply to other systems.
+These instructions will provide you with a copy of the project up and running on your local machine for development and testing purposes. It was developed in macOS Sierra Version 10.12.6 but similar logic may well apply to other systems.
 
 ### Prerequisite
 
@@ -40,7 +39,7 @@ The required environment is up and running.
 ## Running and testing the program
 
 ### Download the example files
-Download the files 'A_01.fcs', 'A_02.fcs', 'A_03.fcs', 'B_01.fcs', 'B_02.fcs', and 'B_03.fcs' from the 'Demo' folder in this repository. Save them on the Desktop. Create a new folder called 'Demo'. Place them in the 'Demo' folder of your local machine.
+Download the files 'A_01.fcs', 'A_02.fcs', 'A_03.fcs', 'B_01.fcs', 'B_02.fcs', and 'B_03.fcs' from the 'Demo' folder in this repository. Save them on your Desktop. Create a new folder called 'Demo'. Place them in the 'Demo' folder of your local machine.
 
 Assuming your terminal is still open and your current directory is 'Desktop'. Type:  
 ```
@@ -60,13 +59,13 @@ Press **Enter**, then type:
 ```
 python parse_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 1
 ```
-'python parse_fcs.py' calls the program. "/Users/your_user_name_of_computer/Desktop/Demo" specifies where the '.fcs' files are located. '1' specifies the number of recordings per '.fcs' file. The program will generate a 'data.csv' file in the same directory as the '.fcs' files, in our case within the Demo folder.  
+'python parse_fcs.py' calls the program. "/Users/your_user_name_of_computer/Desktop/Demo" specifies where the '.fcs' files are located. '1' specifies the number of recordings per '.fcs' file. The program will generate a 'data.csv' file in the same directory as the '.fcs' files, in our case within the 'Demo' folder.  
   
-To identify the wanted threshold for background subtraction (that results in less than 5 peaks per control recording), multiple thresholds that vary in the number of standard deviation deviation-based thresholded files subtract it from the samples, and count the number of peaks for each recordings, by running  the following command in the same terminal:  
+To identify the wanted threshold for background subtraction (that results in less than 5 peaks per control recording), multiple thresholds that vary in “Mean + n*SD” can be subtracted at the same time by running the following command in the same terminal:  
 ```
 python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4 5 6 7 8 9 10"
 ```
-"/Users/your_user_name_of_computer/Desktop/Demo" specifies where the data.csv file was generated from the previous program. '3' specifies the number of control recordings used in this folder.  "1 2 3..." specifies the number of standard deviations away from the mean that are additionally subtracted. The program will create a folder called "Results" in the 'Demo' folder which contains 'raw_data(thresh-mean+xsd).csv' and 'peak_count(thresh-mean+xsd).csv' files. The former contains the raw data after threshold subtraction. The later quantifies the number of peaks after thresholding. The number of peaks is counted after thresholding including a continuous width of peak or a single peak.  
+"/Users/your_user_name_of_computer/Desktop/Demo" specifies where the 'data.csv' file was generated from the previous command. '3' specifies the number of control recordings used in this folder.  "1 2 3..." specifies the number of standard deviations away from the mean that are additionally subtracted. The program will create a folder called "Results" in the 'Demo' folder which contains a 'peak_count.csv' file. The number in the first column describes the number of standard deviations, every following column the peak count of a recording after threshold subtraction (in alphabetical order of the folder). The number of peaks is counted after thresholding including a continuous width of peak or a single peak.  
 
 ### Advanced usage and caution
 - Ensure that the number of control recording is correct. If there are 2 control '.fcs' files and each file contains 3 recordings, the total number should be 3*2 = 6. 
