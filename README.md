@@ -66,7 +66,7 @@ To identify the wanted threshold for background subtraction (that results in les
 ```
 python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4 5 6 7 8 9 10"
 ```
-"/Users/your_user_name_of_computer/Desktop/Demo" specifies where the "data.csv" file was generated from the previous command. "3" specifies the number of control recordings used in this folder.  "1 2 3..." specifies the number of standard deviations away from the mean that are additionally subtracted. The program will create a folder called "Results" in the "Demo" folder which contains a "peak_count.csv" file. The number in the first column describes the number of added standard deviations, every following column the peak count of a recording after threshold subtraction (in alphabetical order of the folder). The number of peaks is counted after thresholding including a continuous width of peak or a single peak.  
+"/Users/your_user_name_of_computer/Desktop/Demo" specifies where the "data.csv" file was generated from the previous command. "3" specifies the number of control recordings used in this folder.  "1 2 3..." specifies the number of standard deviations away from the mean that are additionally subtracted. The program will create a folder called "Results" in the "Demo" folder which contains a "peak_count.csv" file. The number in the first column describes the number of added standard deviations, every following column the peak count of a recording after threshold subtraction (in alphabetical order of the folder).   
 
 ### Advanced usage and caution
 - Ensure that the number of control recording is correct. If there are 2 control '.fcs' files and each file contains 3 recordings, the total number should be 3*2 = 6. 
