@@ -40,7 +40,11 @@ The required environment is up and running.
 ## Running and testing the program
 
 ### Download the example files
+<<<<<<< HEAD
 Download the files "A_01.fcs", "A_02.fcs", "A_03.fcs", "B_01.fcs", "B_02.fcs", and "B_03.fcs" from the "Demo" folder in this repository. Save them on your Desktop. Create a new folder called 'Demo'. Place them in the 'Demo' folder of your local machine.
+=======
+Download the files "A_01.fcs", "A_02.fcs", "A_03.fcs", "B_01.fcs", "B_02.fcs", and "B_03.fcs" from the "Demo" folder in this repository. Save them on your Desktop. Create a new folder called "Demo". Place them in the "Demo" folder of your local machine.
+>>>>>>> 637a7e617f305f8acda3affdaf775d5bf2c93d21
 
 Assuming your terminal is still open and your current directory is "Desktop". Type:  
 ```
