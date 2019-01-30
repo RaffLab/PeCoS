@@ -79,7 +79,8 @@ python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4
 email: isaacwongsiushing@gmail.com
 
 ## Acknowledgements
-- Thomas Steinacker for kickstarting the project and providing the theoretical perspectives of PeCoS
+- Thomas Steinacker for kickstarting the project, providing the theoretical perspectives of PeCoS, reviewing this documentation, and testing the code
+- Felix Zhou for testing the code
 - Everyone from the Raff Lab
 - Sir William Dunn School of Pathology
 - Balliol College
