@@ -60,11 +60,11 @@ The program will create a folder called **Results** in the "Demo" folder which w
 - Ensure that all ".fcs" files in the same directory have the same number of recordings per file.
 - Ensure that the name of the control is smaller than all other ".fcs" files in the folder. In our case, "A" is always smaller than "B", which determines the "A" series as our control.
 
-### Authors
+## Authors
 **Isaac Wong** @ Raff Lab  
 email: isaacwongsiushing@gmail.com
 
-### Publication
+## Publication
 The script was used in XXX
 
 ## Acknowledgements
