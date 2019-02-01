@@ -42,7 +42,9 @@ Press **Enter**, then type:
 python parse_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 1
 ```
 The command is in the format of **python parse_fcs.py argument_1 argument_2**.
+
 The arguments:
+
 | Name | Description |
 | :--- | :-------------------------------------------------------------------------------------------- |
 | argument_1 | The location to **.fcs** files. It should be a string enclosed by "". |
@@ -54,7 +56,9 @@ python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4
 ```
 
 The above command has the format of **python thresh_fcs.py argument_1 argument_2 argument_3**.
+
 The arguments:
+  
 | Name | Description |
 | :--- | :-------------------------------------------------------------------------------------------- |
 | argument_1 | The location to **data.csv** file generated from the previous command. It should be a string enclosed by "". |
