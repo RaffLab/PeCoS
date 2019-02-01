@@ -17,9 +17,25 @@ Plotting it into a spectrum will look like this:
 
 These instructions will provide you with a copy of the project up and running on your local machine for development and testing purposes. It was developed in macOS Sierra Version 10.12.6 but similar logic may well apply to other systems.
 
+### Prerequisite
+
+Please install anaconda python 2.7 version from [anaconda website](https://www.anaconda.com/download/#macos)
+
 ### Installation
 
-Please install anaconda python 2.7 version from [anaconda website](https://www.anaconda.com/download/#macos). Dependencies include scikit-image version 0.13.0, numpy version 1.13.3, and pandas version 0.21.0. The guideline to install dependecies is in [anaconda package management](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html).
+Once anaconda is up and running, please download **environment.yml** from the installation folder and place the file on your Desktop. "environment.yml" contains all required libraries for the scripts.
+
+Open terminal and type:
+```
+cd Desktop
+```
+Press **Enter** on your keyboard,then type:  
+```
+conda env create -f environment.yml
+```
+Press **Enter**, please wait patiently.  
+
+The required environment is up and running.
 
 ## Running and testing the program
 
@@ -39,31 +55,21 @@ cd Desktop/FCS-for-low-abundance-protein
 ```
 Press **Enter**, then type:  
 ```
+source activate CV
+```
+Press **Enter**, then type:  
+```
 python parse_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 1
 ```
-The command is in the format of **python parse_fcs.py argument_1 argument_2**.
-The arguments:
-| Name | Description |
-| :--- | :-------------------------------------------------------------------------------------------- |
-| argument_1 | The location to **.fcs** files. It should be a string enclosed by "". |
-| argument_2 | The number of recordings per **.fcs** file |
+"python parse_fcs.py" calls the program. "/Users/your_user_name_of_computer/Desktop/Demo" specifies where the ".fcs" files are located. "1" specifies the number of recordings per ".fcs" file. The program will generate a "data.csv" file in the same directory as the ".fcs" files, in our case within the "Demo" folder.  
   
 To identify the wanted threshold for background subtraction (that results in less than 5 peaks per control recording), multiple thresholds that vary in "Mean + n*SD" can be subtracted simultaneously by running the following command in the same terminal:  
 ```
 python thresh_fcs.py "/Users/your_user_name_of_computer/Desktop/Demo" 3 "1 2 3 4 5 6 7 8 9 10"
 ```
+"/Users/your_user_name_of_computer/Desktop/Demo" specifies where the "data.csv" file was generated from the previous command. "3" specifies the number of control recordings used in this folder.  "1 2 3..." specifies the number of standard deviations away from the mean that are additionally subtracted. The program will create a folder called "Results" in the "Demo" folder which contains a "peak_count.csv" file. The number in the first column describes the number of added standard deviations, every following column the peak count of a recording after threshold subtraction (in alphabetical order of the folder).   
 
-The above command has the format of **python thresh_fcs.py argument_1 argument_2 argument_3**.
-The arguments:
-| Name | Description |
-| :--- | :-------------------------------------------------------------------------------------------- |
-| argument_1 | The location to **data.csv** file generated from the previous command. It should be a string enclosed by "". |
-| argument_2 | A positive number specifies the number of control recording used. |
-| argument_3 | The number of standard deviations away from the mean that are additionally subtracted. It expects a string of number separated by space and enclosed by "". | 
-  
-The program will create a folder called **Results** in the "Demo" folder which will contain a **peak_count.csv** file. The number in the first column describes the number of added standard deviations, every following column the peak count of a recording after threshold subtraction (in alphabetical order of the folder).   
-
-### Usage and naming conventions
+### Advanced usage and caution
 - Ensure that the number of control recording is correct. If there are 2 control '.fcs' files and each file contains 3 recordings, the total number should be 3*2 = 6. 
 - Ensure that all ".fcs" files in the same directory have the same number of recordings per file.
 - Ensure that the name of the control is smaller than all other ".fcs" files in the folder. In our case, "A" is always smaller than "B", which determines the "A" series as our control.
@@ -71,9 +77,6 @@ The program will create a folder called **Results** in the "Demo" folder which w
 ### Authors
 **Isaac Wong** @ Raff Lab  
 email: isaacwongsiushing@gmail.com
-
-### Publication
-The script was used in XXX
 
 ## Acknowledgements
 - Thomas Steinacker for kickstarting the project, providing the theoretical perspectives of PeCoS, reviewing this documentation, and testing the code
@@ -85,4 +88,4 @@ The script was used in XXX
 - Cancer Research UK
 
 ## License
-This project is licensed under MIT LICENSE
+This project is licensed under GNU GENERAL PUBLIC LICENSE
