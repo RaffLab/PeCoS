@@ -1,17 +1,5 @@
 # Peak Counting Spectroscopy (PeCoS)
-PeCoS allows the relative concentration measurement of fluorescently-tagged, low abundance particles, where Fluorescence Correlation Spectroscopy (FCS) is not sensitive enough. It uses a conventional point FCS setup for the data acquisition, but differs in terms of its data analysis. Instead of autocorrelation analysis (as performed in FCS), the intensity traces are quantified for their number of peaks (as a proxy for concentration), which originate from a fluorophore moving through the excitation volume and thereby causing a detectable burst of photons. In order to determine the cut-off threshold, which is used to subtract the background noise, control recordings are required. “Mean + n*SD” (where n = 1,2,3,…) of all control recordings are subtracted from each control recording, and the threshold that results in an average of less than five peaks per control measurement is subtracted from all intensity traces. In the peak detection algorithm, a peak is defined as any consecutive value (photon count) that surpasses the subtracted threshold.
-
-This folder contains two python scripts, namely "parse_fcs.py" and "thresh_fcs.py". "parse_fcs.py" parses through files with ".fcs" extension and combines them into a single ".csv" file. "thresh_fcs.py" finds the threshold from the control recordings of the aforementioned file with ".csv" extension and obtains the peak count after threshold subtraction.
-
-".fcs" files were orginally obtained in the ZenBlack software using the FCS tab of a Zeiss880 Airy Scan confocal setup.
-
-An example of an ".fcs" file format:
-
-![alt text](Images/fcs_file_example.png)  
- 
-
-Plotting it into a spectrum will look like this:  
-![alt text](Images/original_peak.png)  
+This directory contains two python scripts, namely "parse_fcs.py" and "thresh_fcs.py". "parse_fcs.py" parses through files with ".fcs" extension and combines them into a single ".csv" file. "thresh_fcs.py" finds the threshold from the control recordings of the aforementioned file with ".csv" extension and obtains the peak count after threshold subtraction.
 
 ## Getting Started
 
