@@ -65,7 +65,7 @@ The program will create a folder called **Results** in the "Demo" folder which w
 email: isaacwongsiushing@gmail.com
 
 ## Publication
-The script was originally reported in and should be cited from 'Aydogan, Steinacker et al., 2019'.
+The script was originally reported in and should be cited from "Aydogan, Steinacker et al., 2019".
 
 ## Acknowledgements
 - Thomas Steinacker for kickstarting the project, providing the theoretical perspectives of PeCoS, reviewing this documentation, and testing the code
