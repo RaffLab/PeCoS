@@ -17,13 +17,13 @@ Download the files "A_01.fcs", "A_02.fcs", "A_03.fcs", "B_01.fcs", "B_02.fcs", a
 
 Assuming your terminal is still open and your current directory is "Desktop". Type:  
 ```
-git clone https://github.com/SiuShingWong/FCS-for-low-abundance-protein.git
+git clone https://github.com/SiuShingWong/PeCoS.git
 ```
 
 ### Running and testing the program
 Close all terminal windows. Open terminal again and type:  
 ```
-cd Desktop/FCS-for-low-abundance-protein
+cd Desktop/PeCoS
 ```
 Press **Enter**, then type:  
 ```
